@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './_aside.scss'
 
 export default class Aside extends React.Component{
+    constructor(props){
+        super(props)
+    }
    render () {
        const colors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'Brown', 'Gray']
     return (
@@ -13,9 +16,9 @@ export default class Aside extends React.Component{
     <h3 style={{fontSize: '1vw'}}className='random-text'>Random Color</h3>
     </div>
     </div>
-    <div className='aside-list-container'>
+    <div className='aside-list-container' onClick={(event)=> this.props.handleColorChange(event)}>
         {colors.map((color,i)=> 
-        <p key={i} className='color-list' style={{fontSize: '1.2vw'}}>{color}</p> 
+        <p key={i} id={color.toLowerCase()} className='color-list' style={{fontSize: '1.2vw'}}>{color}</p> 
         )}
     </div>
         
