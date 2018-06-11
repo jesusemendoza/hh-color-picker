@@ -1,0 +1,21 @@
+.random-button-container {
+    text-align: center;
+    
+    .random-button {
+        border: solid 1px;
+        border-radius: 12px;
+        background: white; 
+        margin: 0 auto;
+    }
+    .random-button:hover{
+        background: gray;
+    }
+}
+.color-list{
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 1em 1em 1em 1em;
+}
+.color-list:hover {
+    background: wheat;
+}
