@@ -23,7 +23,8 @@ export default class Home extends React.Component {
         this.handleColorChange = this.handleColorChange.bind(this);
         this.detailViewToggle = this.detailViewToggle.bind(this);
         this.changeDetailColors = this.changeDetailColors.bind(this);
-        this.setNewRows = this.setNewRows.bind(this)
+        this.setNewRows = this.setNewRows.bind(this);
+        this.changePage = this.changePage.bind(this);
     }
 
         handleColorChange(event) {
@@ -60,8 +61,8 @@ export default class Home extends React.Component {
             let { offset, start, end } = this.state;
             
             for ( let i = start; i < (start+offset) ; i++){
-                (i < 5)? row1.push({hex : colorData[i].hex})
-                    :( i < 10)? row2.push({hex: colorData[i].hex})
+                (i < (start + 5))? row1.push({hex : colorData[i].hex})
+                    :( i < (start + 10))? row2.push({hex: colorData[i].hex})
                         :row3.push({hex: colorData[i].hex});
             }
 
@@ -70,8 +71,6 @@ export default class Home extends React.Component {
                 row2: row2,
                 row3: row3,
                 activeColorsDetail: row1,
-                start: start + offset,
-                end : end + offset,
             })
         }
 
@@ -79,6 +78,23 @@ export default class Home extends React.Component {
             (event.target.id === 'clear-detail' || event.target.id ==='clear-text')?
             this.setState({detailView: false})
             :this.setState({detailView: true});
+        }
+
+        changePage(event) {
+            console.log(event.target.id, ': change page')
+            let num = parseInt(event.target.id)
+            let { start, end, offset} = this.state;
+            start = ((num * offset));
+            end = (start + offset);
+            console.log(end, ': start type of')
+            this.setState({
+                start: start,
+                end: end,
+                detailView: false,
+            })
+            setTimeout(()=>{
+                this.setNewRows()
+            }, 200)
         }
 
         componentWillMount() {
@@ -108,6 +124,7 @@ export default class Home extends React.Component {
             rows1={this.state.row1}
             rows2={this.state.row2}
             rows3={this.state.row3}
+            changePage={this.changePage}
         />
 	</div>
 	

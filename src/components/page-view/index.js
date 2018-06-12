@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import ColorPalette from '../color-palette';
+import PageBar from '../page-bar';
 
 export default class PageView extends React.Component {
     constructor(props){
@@ -8,7 +9,7 @@ export default class PageView extends React.Component {
     }
 
     render(){
-        let { detailView, handleColorChange, activeColorsDetail, rows } = this.props;
+        let { detailView, handleColorChange, activeColorsDetail, rows, changePage } = this.props;
         return (
             <Fragment>
                 <ColorPalette 
@@ -32,7 +33,11 @@ export default class PageView extends React.Component {
                     bottom={56}
                     name='three'
                 />
-            </Fragment>
+                <PageBar
+                    changePage={changePage}
+                    detailView={!detailView}
+                />
+                </Fragment>
         )
     }
 }
