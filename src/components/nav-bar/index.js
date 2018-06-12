@@ -5,18 +5,7 @@ export default class AppBar extends React.Component {
 
     constructor(props){
         super(props)
-
-        this.burgerToggle = this.burgerToggle.bind();
     }
-
-    burgerToggle() {
-		let linksEl = document.querySelector('.narrowLinks');
-		if (linksEl.style.display === 'block') {
-			linksEl.style.display = 'none';
-		} else {
-			linksEl.style.display = 'block';
-		}
-	}
 
 render() {
 
@@ -25,7 +14,7 @@ render() {
 			<div className='nav-bar'>
 				<div className="navWide">
 					<div className="wideDiv">
-						<a className="nav-logo-link" href="/home"></a>
+						<a className="nav-logo-link" href="/"></a>
 						<input type='text' placeholder='Search' className='search-bar' />
 					</div>
 				</div>
@@ -33,6 +22,3 @@ render() {
 		);
 	}
 };
-
-//todo 
-//make the logo go home when clicked
