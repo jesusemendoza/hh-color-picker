@@ -1,4 +1,4 @@
-export default colorData = [
+export const colorData = [
     {
       "name": "air_force_blue_raf",
       "fancy_name": "Air Force Blue (Raf)",
