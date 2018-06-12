@@ -1,0 +1,44 @@
+.page-bar {
+	background-color:rgba(255,255,255,0.1);
+	overflow: hidden;
+	position: fixed;
+    z-index: 10;
+    padding-top: 0.5em;
+
+	a {
+		color: #FFF;
+	}
+
+	a:visited {
+		color: #FFF;
+	}
+	.navWide {
+		display: block;
+		margin: 0 auto;
+		padding-right: 5em;
+		padding-left: 5em;
+
+
+		.wideDiv {
+			text-align: center;
+
+			.nav-link:hover {
+                background:rgb(165, 165, 165);
+                cursor: pointer;
+			  }
+
+		    .nav-link {
+                color: #000;
+				text-decoration: none;
+				display: inline-block;
+				// Adjust padding to increase/decrease the space between links.
+                padding: 0.6em 0.5em 0.6em 0.5em;
+                border-radius: 10px;
+			}
+		}
+	}
+
+	// Navbar is set to default with the "hamburger" and links on the left
+	// side of the screen. To move to the right of the screen, simply
+	// change the three "float: Left;" references to read "float: right;".
+}
