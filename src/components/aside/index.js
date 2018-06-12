@@ -6,12 +6,14 @@ export default class Aside extends React.Component{
         super(props)
     }
    render () {
-       const colors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'Brown', 'Gray']
+       const colors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'Brown', 'Gray'];
+       let { getRandomColor } = this.props;
     return (
 
     <div style={{display:'block',height: '100%', width: '20vw', position: 'fixed', right:'left', background:'#fbf9e6'}} >
     <div style={{width:'100%', height: '5em',background: '#fbf9e6'}} />
-    <div style={{width:'100%'}}className='random-button-container'>
+    <div style={{width:'100%'}}className='random-button-container' 
+        onClick={(event)=> getRandomColor(event)}>
     <div style={{width: '80%'}}className='random-button'>
     <p style={{fontSize: '1.6vw'}}className='random-text'>Random Color</p>
     </div>
