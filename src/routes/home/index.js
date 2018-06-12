@@ -25,6 +25,7 @@ export default class Home extends React.Component {
         this.changeDetailColors = this.changeDetailColors.bind(this);
         this.setNewRows = this.setNewRows.bind(this);
         this.changePage = this.changePage.bind(this);
+        this.getRandomColor = this.getRandomColor.bind(this);
     }
 
         handleColorChange(event) {
@@ -52,6 +53,14 @@ export default class Home extends React.Component {
             this.setState({
                 activeColorsDetail: active,
             })
+        }
+
+        getRandomColor(event) {
+           const randomNumber = Math.floor(Math.random() * (128 - 1)) + 1;
+           console.log(randomNumber);
+           const activeColor = colorData[randomNumber];
+           this.setState({activeColor: activeColor.hex})
+           this.detailViewToggle(event)
         }
 
         setNewRows() {
@@ -90,7 +99,6 @@ export default class Home extends React.Component {
             this.setState({
                 start: start,
                 end: end,
-                detailView: false,
             })
             setTimeout(()=>{
                 this.setNewRows()
@@ -106,6 +114,7 @@ export default class Home extends React.Component {
 		<NavBar />
         <Aside
             handleColorChange={this.handleColorChange}
+            getRandomColor={this.getRandomColor}
         />
         <Detail 
             handleColorChange={this.handleColorChange}

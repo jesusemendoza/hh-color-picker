@@ -14,9 +14,18 @@ export default class Detail extends React.Component {
             <Fragment>
                 <div
                 className='detail-container' 
-                style={{width:'70%', height: `${detailView?'53%':'0%'}`, background:`${activeColor}`, right:'6%', top:`13%`, border:`${detailView?'1px solid black':'none'}` }
+                style={{width:'70%', height: `${detailView?'43%':'0%'}`, background:`${activeColor}`, right:'6%', top:`13%`, border:`${detailView?'1px solid black':'none'}` }
                 }>
                  </div>
+                 <div
+                className='detail-text-container' 
+                style={{width:'70%', height: `${detailView?'10%':'0%'}`, 
+                background:'white', right:'6%', top:`${detailView?'55%':'-10%'}`, 
+                border:`${detailView?'1px solid black':'none'}` }
+                }>
+                    <p id='detail-text'className='detail-toggle-text'>{activeColor}</p>
+                 </div> 
+
                 <div
                 className='detail-toggle-container'
                 onClick={(event)=> detailViewToggle(event)}

@@ -12,6 +12,9 @@
         background: wheat;
         cursor: pointer;
     }
+    .random-button:active {
+        background: rgb(251, 249, 230);
+    }
 }
 .color-list{
     margin-bottom: 0;
@@ -21,4 +24,7 @@
 .color-list:hover {
     background: wheat;
     cursor: pointer;
+}
+.color-list:active {
+    background: rgb(251, 249, 230);
 }

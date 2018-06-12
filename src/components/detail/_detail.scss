@@ -3,6 +3,16 @@
     border-radius: 5px;
 }
 
+.detail-text-container {
+    position: fixed;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#detail-text {
+    padding-left: 3vw;
+    font-size: 2vw;
+}
 .detail-toggle-container {
     transition-delay: all 0.1s;
   
@@ -14,7 +24,7 @@
         cursor: pointer;
     }
     .detail-toggle-button:active {
-        background: gray;
+        background: white;
     }
 
 }
