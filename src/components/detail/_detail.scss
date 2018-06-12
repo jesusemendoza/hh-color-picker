@@ -1,5 +1,19 @@
 .detail-container {
     position: fixed;
-    border: solid 1px black;
     border-radius: 5px;
+}
+
+.detail-toggle-container {
+    transition-delay: all 0.1s;
+  
+    .detail-toggle-button {
+        background: white;
+    }
+    .detail-toggle-button:hover {
+        background: wheat;
+    }
+    .detail-toggle-button:active {
+        background: gray;
+    }
+
 }
