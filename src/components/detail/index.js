@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import './_detail.scss'
-import DetailColors from './detail-colors';
+import ColorPalette from '../color-palette';
 
 export default class Detail extends React.Component {
     constructor(props){
@@ -9,8 +9,8 @@ export default class Detail extends React.Component {
     }
 
     render(){
-        let { detailView, activeColor, detailViewToggle, handleColorChange } = this.props;
-        console.log(activeColor)
+        let { detailView, activeColor, detailViewToggle, handleColorChange, activeColorsDetail } = this.props;
+        console.log(activeColorsDetail, ': detail up')
         return (
             <Fragment>
                 <div
@@ -22,8 +22,8 @@ export default class Detail extends React.Component {
                 className='detail-toggle-container'
                 onClick={(event)=> detailViewToggle(event)}
                 style={{position: 'fixed', width:'78%', height: `${detailView?'10%':'0'}`,
-                 background:'blue', right:'2%', bottom:`${detailView?'0%':'-5%'}`, 
-                 border:`${detailView?'1px solid black':'none'}`,
+                right:'2%', bottom:`${detailView?'0%':'-5%'}`, 
+
                  textAlign: 'center', padding: '1vw'
                 }
                 }>
@@ -35,9 +35,11 @@ export default class Detail extends React.Component {
                         <p id='clear-text'className='detail-toggle-text'>Clear</p>
                     </div>
                 </div>
-                <DetailColors 
+                <ColorPalette 
                     detailView={detailView}
                     handleColorChange={handleColorChange}
+                    activeColorsDetail={activeColorsDetail}
+                    bottom={16}
                 />
             </Fragment>
         )
