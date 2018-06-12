@@ -57,7 +57,6 @@ export default class Home extends React.Component {
 
         getRandomColor(event) {
            const randomNumber = Math.floor(Math.random() * (128 - 1)) + 1;
-           console.log(randomNumber);
            const activeColor = colorData[randomNumber];
            this.setState({activeColor: activeColor.hex})
            this.detailViewToggle(event)
@@ -90,12 +89,10 @@ export default class Home extends React.Component {
         }
 
         changePage(event) {
-            console.log(event.target.id, ': change page')
             let num = parseInt(event.target.id)
             let { start, end, offset} = this.state;
             start = ((num * offset));
             end = (start + offset);
-            console.log(end, ': start type of')
             this.setState({
                 start: start,
                 end: end,

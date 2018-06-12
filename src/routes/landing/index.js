@@ -16,10 +16,8 @@ export default class landing extends React.Component {
 
         handleColorChange(event) {
             event.preventDefault()
-            console.log(event.target)
         }
     render() {
-        console.log('inside of  landing:  ', this.props.history)
       return(
         <div className='landingContainer'>
             <FancyButton
