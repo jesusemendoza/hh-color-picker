@@ -8,27 +8,29 @@ export default class PageView extends React.Component {
     }
 
     render(){
-        let { detailView, handleColorChange, activeColorsDetail } = this.props;
-        console.log(activeColorsDetail, ': detail up')
+        let { detailView, handleColorChange, activeColorsDetail, rows } = this.props;
         return (
             <Fragment>
                 <ColorPalette 
                     detailView={!detailView}
                     handleColorChange={handleColorChange}
-                    activeColorsDetail={activeColorsDetail}
-                    bottom={32}
+                    activeColorsDetail={rows[0]}
+                    bottom={20}
+                    name='one'
                 />
                 <ColorPalette 
                     detailView={!detailView}
                     handleColorChange={handleColorChange}
-                    activeColorsDetail={activeColorsDetail}
-                    bottom={48}
+                    activeColorsDetail={rows[1]}
+                    bottom={38}
+                    name='two'
                 />
                 <ColorPalette 
                     detailView={!detailView}
                     handleColorChange={handleColorChange}
-                    activeColorsDetail={activeColorsDetail}
-                    bottom={64}
+                    activeColorsDetail={rows[2]}
+                    bottom={56}
+                    name='three'
                 />
             </Fragment>
         )
