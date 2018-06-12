@@ -9,7 +9,7 @@ export default class Aside extends React.Component{
        const colors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'Brown', 'Gray']
     return (
 
-    <div style={{display:'block',height: '100%', width: '15vw', position: 'fixed', right:'left', background:'#fbf9e6'}} >
+    <div style={{display:'block',height: '100%', width: '20vw', position: 'fixed', right:'left', background:'#fbf9e6'}} >
     <div style={{width:'100%', height: '5em',background: '#fbf9e6'}} />
     <div style={{width:'100%'}}className='random-button-container'>
     <div style={{width: '80%'}}className='random-button'>

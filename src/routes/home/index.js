@@ -10,48 +10,79 @@ export default class Home extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            detailView: true,
+            detailView: false,
             activeColor: 'red',
-            offset: 5,
+            offset: 15,
             start: 0,
-            end: 5,
+            end: 15,
             activeColorsDetail: [],
+            row1: [],
+            row2: [],
+            row3: [],
         }
         this.handleColorChange = this.handleColorChange.bind(this);
         this.detailViewToggle = this.detailViewToggle.bind(this);
         this.changeDetailColors = this.changeDetailColors.bind(this);
+        this.setNewRows = this.setNewRows.bind(this)
     }
 
         handleColorChange(event) {
-            console.log(event.target)
+            let { className } = event.target;
+            className? className = className.split(' ')[0]
+                :null;
+    
+
+            (className === 'one' || className === 'two' || className === 'three')? 
+                this.changeDetailColors(className)
+                : null;            
+
             const activeColor = event.target.id
             this.setState({activeColor})
-            this.detailViewToggle(event);
+            this.detailViewToggle(event); 
         }
 
-        changeDetailColors() {
-            let activeColorsDetail =  []
-            let {offset, start, end} = this.state;
-            for (let i = start; i < end; i++){
-                activeColorsDetail.push({hex : colorData[i].hex})
-            }
+        changeDetailColors(className) {
+            const { row1, row2, row3 } = this.state;
+            let active =  [];
+            (className === 'one')? active = row1
+                :(className === 'two')? active = row2
+                    :active = row3;
+
             this.setState({
-                activeColorsDetail: activeColorsDetail,
+                activeColorsDetail: active,
+            })
+        }
+
+        setNewRows() {
+            let row1 = []
+            let row2 = []
+            let row3 = []
+            let { offset, start, end } = this.state;
+            
+            for ( let i = start; i < (start+offset) ; i++){
+                (i < 5)? row1.push({hex : colorData[i].hex})
+                    :( i < 10)? row2.push({hex: colorData[i].hex})
+                        :row3.push({hex: colorData[i].hex});
+            }
+
+            this.setState({
+                row1: row1,
+                row2: row2,
+                row3: row3,
+                activeColorsDetail: row1,
                 start: start + offset,
                 end : end + offset,
             })
-            console.log(this.state.activeColorsDetail)
         }
 
         detailViewToggle(event) {
-            console.log(event.target.class);
             (event.target.id === 'clear-detail' || event.target.id ==='clear-text')?
             this.setState({detailView: false})
             :this.setState({detailView: true});
         }
 
         componentWillMount() {
-            this.changeDetailColors()
+            this.setNewRows()
         }
     render() {
       return(
@@ -73,6 +104,10 @@ export default class Home extends React.Component {
             detailView={this.state.detailView}
             detailViewToggle={this.detailViewToggle}
             activeColorsDetail={this.state.activeColorsDetail}
+            rows={[this.state.row1, this.state.row2, this.state.row3]}
+            rows1={this.state.row1}
+            rows2={this.state.row2}
+            rows3={this.state.row3}
         />
 	</div>
 	
