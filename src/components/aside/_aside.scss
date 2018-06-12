@@ -8,7 +8,9 @@
         margin: 0 auto;
     }
     .random-button:hover{
+        transition: all 0.1s;
         background: wheat;
+        cursor: pointer;
     }
 }
 .color-list{
@@ -18,4 +20,5 @@
 }
 .color-list:hover {
     background: wheat;
+    cursor: pointer;
 }

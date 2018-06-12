@@ -13,10 +13,10 @@
   
   @keyframes glow{
     from{
-      box-shadow:0 0 5px 5px greenyellow
+      box-shadow:0 0 5px 5px rgb(251, 249, 230)
     }
     to{
-      box-shadow:0 0 -5px 5px fuchsia
+      box-shadow:0 0 -5px 5px #d1c6d1
     }
   }
   
@@ -80,6 +80,6 @@
        }
        .button-text {
             letter-spacing: 0.01em;
-            font-family: "Roboto", sans-serif;
+            font-family: 'Source Serif Pro', serif;
        }
   }
