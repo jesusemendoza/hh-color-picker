@@ -30,7 +30,7 @@ export default class ColorPalette extends React.Component {
                         id={color.hex} 
                         className={`${name} color`}
                         style={{position:'fixed', width:'8%', height: `${detailView?'4%':'0%'}`, 
-                        background:'white', right:`${(i * spacing)+ 5}%`, bottom:`${detailView?`${bottom}%`:'-20%'}`,
+                        right:`${(i * spacing)+ 5}%`, bottom:`${detailView?`${bottom}%`:'-20%'}`,
                         border:`${detailView?'1px solid black':'none'}`,
                         borderBottomLeftRadius:'5px', borderBottomRightRadius:'5px',
                     }
